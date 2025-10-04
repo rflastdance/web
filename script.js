@@ -87,10 +87,12 @@ function initializeHeaderEffects() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > 100) {
-            header.style.background = 'linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%)';
+            header.style.background = 'rgba(10, 10, 10, 0.95)';
+            header.style.webkitBackdropFilter = 'blur(20px)';
             header.style.backdropFilter = 'blur(20px)';
         } else {
-            header.style.background = 'linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%)';
+            header.style.background = 'rgba(10, 10, 10, 0.95)';
+            header.style.webkitBackdropFilter = 'blur(10px)';
             header.style.backdropFilter = 'blur(10px)';
         }
         
@@ -408,6 +410,7 @@ function showRaceModal(card) {
         align-items: center;
         justify-content: center;
         z-index: 10000;
+        -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
     `;
     
@@ -538,7 +541,7 @@ function playHoverSound() {
         z-index: 10000;
         pointer-events: none;
     `;
-    soundIndicator.textContent = '♪ HOVER';
+    soundIndicator.textContent = 'HOVER';
     document.body.appendChild(soundIndicator);
     
     setTimeout(() => soundIndicator.remove(), 500);
@@ -559,7 +562,7 @@ function playClickSound() {
         z-index: 10000;
         pointer-events: none;
     `;
-    soundIndicator.textContent = '♪ CLICK';
+    soundIndicator.textContent = 'CLICK';
     document.body.appendChild(soundIndicator);
     
     setTimeout(() => soundIndicator.remove(), 500);

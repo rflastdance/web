@@ -48,13 +48,14 @@ body {
 
 /* Header Styles */
 .header {
-    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+    background: rgba(10, 10, 10, 0.95);
     border-bottom: 2px solid var(--highlight-orange);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
 
@@ -162,7 +163,10 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
 .hero-content {
@@ -222,10 +226,11 @@ body {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(42, 42, 42, 0.7);
     padding: 1rem 2rem;
     border-radius: var(--border-radius);
     border: 1px solid rgba(255, 107, 53, 0.3);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     font-weight: 600;
     font-size: 1.1rem;
@@ -322,11 +327,12 @@ body {
 }
 
 .race-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    background: rgba(42, 42, 42, 0.8);
     border-radius: var(--border-radius);
     padding: 2.5rem;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: var(--transition);
     position: relative;
